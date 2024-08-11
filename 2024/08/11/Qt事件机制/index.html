@@ -20,31 +20,33 @@
     var CONFIG = {"hostname":"crossroadw.github.io","root":"/awesome.github.io/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="qt c++  devloper">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小王博客">
-<meta property="og:url" content="https://crossroadw.github.io/awesome.github.io/index.html">
+  <meta name="description" content="事件机制QWidget::installEventFilter 当 obj 收到任何事件时，这些事件将首先被传递给 this（MyWidget）的 eventFilter 方法。 例如 btn-&gt;installEventFilter(this); 返回值： if you want to filter the event out, i.e. stop it being handled furt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Qt事件机制">
+<meta property="og:url" content="https://crossroadw.github.io/awesome.github.io/2024/08/11/Qt%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/index.html">
 <meta property="og:site_name" content="小王博客">
-<meta property="og:description" content="qt c++  devloper">
+<meta property="og:description" content="事件机制QWidget::installEventFilter 当 obj 收到任何事件时，这些事件将首先被传递给 this（MyWidget）的 eventFilter 方法。 例如 btn-&gt;installEventFilter(this); 返回值： if you want to filter the event out, i.e. stop it being handled furt">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-11T07:53:15.000Z">
+<meta property="article:modified_time" content="2024-08-11T07:54:08.172Z">
 <meta property="article:author" content="awesome wang">
 <meta property="article:tag" content="c++ qt linux">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://crossroadw.github.io/awesome.github.io/">
+<link rel="canonical" href="https://crossroadw.github.io/awesome.github.io/2024/08/11/Qt%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>小王博客</title>
+  <title>Qt事件机制 | 小王博客</title>
   
 
 
@@ -143,9 +145,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -161,10 +164,9 @@
       <meta itemprop="name" content="小王博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/awesome.github.io/2024/08/11/Qt%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/" class="post-title-link" itemprop="url">Qt事件机制</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Qt事件机制
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -188,7 +190,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="事件机制"><a href="#事件机制" class="headerlink" title="事件机制"></a>事件机制</h2><h2 id="QWidget-installEventFilter"><a href="#QWidget-installEventFilter" class="headerlink" title="QWidget::installEventFilter"></a>QWidget::installEventFilter</h2><blockquote>
+        <h2 id="事件机制"><a href="#事件机制" class="headerlink" title="事件机制"></a>事件机制</h2><h2 id="QWidget-installEventFilter"><a href="#QWidget-installEventFilter" class="headerlink" title="QWidget::installEventFilter"></a>QWidget::installEventFilter</h2><blockquote>
 <p>当 obj 收到任何事件时，这些事件将首先被传递给 this（MyWidget）的 eventFilter 方法。</p>
 <p>例如 btn-&gt;installEventFilter(this);</p>
 <p>返回值：</p>
@@ -212,241 +214,30 @@
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://doc.qt.io/qt-5/qevent.html#ignore">qevent.html#ignore</a></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> Ui &#123;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MainWindow</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">QT_END_NAMESPACE</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MainWindow</span> : <span class="keyword">public</span> QMainWindow &#123;</span><br><span class="line">    Q_OBJECT</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MainWindow</span>(QWidget *parent = <span class="literal">nullptr</span>);</span><br><span class="line">    ~<span class="built_in">MainWindow</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">mouseMoveEvent</span><span class="params">(QMouseEvent *event)</span> <span class="keyword">override</span></span>;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">event</span><span class="params">(QEvent *e)</span> <span class="keyword">override</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">mousePressEvent</span><span class="params">(QMouseEvent *)</span> <span class="keyword">override</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">bool</span> isMenuVisible;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">initMenu</span><span class="params">()</span></span>;</span><br><span class="line">    Ui::MainWindow *ui;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mainwindow.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;gbutton.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;logger.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ui_mainwindow.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QMetaEnum&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QMetaObject&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QMouseEvent&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QTimer&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MainWindow::<span class="built_in">MainWindow</span>(QWidget *parent) : <span class="built_in">QMainWindow</span>(parent), <span class="built_in">ui</span>(<span class="keyword">new</span> Ui::MainWindow) &#123;</span><br><span class="line">    ui-&gt;<span class="built_in">setupUi</span>(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">auto</span> btn = <span class="keyword">new</span> <span class="built_in">GButton</span>();</span><br><span class="line"></span><br><span class="line">    btn-&gt;<span class="built_in">setParent</span>(<span class="keyword">this</span>);</span><br><span class="line">    btn-&gt;<span class="built_in">move</span>(<span class="built_in">geometry</span>().<span class="built_in">center</span>() - btn-&gt;<span class="built_in">geometry</span>().<span class="built_in">center</span>());</span><br><span class="line">    <span class="built_in">INFO</span>(__PRETTY_FUNCTION__);</span><br><span class="line">    <span class="built_in">initMenu</span>();</span><br><span class="line">    <span class="built_in">setMouseTracking</span>(<span class="literal">true</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MainWindow::~<span class="built_in">MainWindow</span>() &#123;</span><br><span class="line">    <span class="keyword">delete</span> ui;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MainWindow::mouseMoveEvent</span><span class="params">(QMouseEvent *event)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// INFO(__PRETTY_FUNCTION__);</span></span><br><span class="line">    <span class="comment">// INFO(rand());</span></span><br><span class="line">    QMainWindow::<span class="built_in">mouseMoveEvent</span>(event);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">MainWindow::event</span><span class="params">(QEvent *e)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// QMetaObject meta = QEvent::staticMetaObject;</span></span><br><span class="line">    <span class="comment">// QMetaEnum metaEnum = meta.enumerator(meta.indexOfEnumerator(&quot;Type&quot;));</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// // 使用QMetaEnum将枚举值转换为字符串</span></span><br><span class="line">    <span class="comment">// QString eventType = metaEnum.valueToKey(e-&gt;type());</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// // 输出事件类型字符串</span></span><br><span class="line">    <span class="comment">// qDebug() &lt;&lt; &quot;[MainWindow]Event type:&quot; &lt;&lt; eventType;</span></span><br><span class="line">    <span class="comment">// e-&gt;accept();</span></span><br><span class="line">    <span class="keyword">return</span> QMainWindow::<span class="built_in">event</span>(e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MainWindow::mousePressEvent</span><span class="params">(QMouseEvent *event)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (event-&gt;<span class="built_in">button</span>() == Qt::LeftButton) &#123;</span><br><span class="line">        <span class="comment">// 这里处理鼠标左键单击事件</span></span><br><span class="line">        <span class="built_in">qDebug</span>() &lt;&lt; <span class="string">&quot;[mainwindow] left  clicked&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> QMainWindow::<span class="built_in">mousePressEvent</span>(event);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MainWindow::initMenu</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">connect</span>(ui-&gt;file_open_action, &amp;QAction::triggered, <span class="keyword">this</span>, [](<span class="type">bool</span> check) &#123;</span><br><span class="line">        <span class="built_in">INFO</span>(<span class="string">&quot;file_open_action triggered &quot;</span> &lt;&lt; (check ? <span class="string">&quot;checked&quot;</span> : <span class="string">&quot;unchecked&quot;</span>));</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">connect</span>(ui-&gt;backup_action, &amp;QAction::triggered, <span class="keyword">this</span>, [](<span class="type">bool</span> check) &#123;</span><br><span class="line">        <span class="built_in">INFO</span>(<span class="string">&quot;backup_action triggered&quot;</span> &lt;&lt; (check ? <span class="string">&quot;checked&quot;</span> : <span class="string">&quot;unchecked&quot;</span>));</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// connect(ui-&gt;menubar, &amp;QMenuBar::hovered, this, [this](QAction *action) &#123;</span></span><br><span class="line">    <span class="comment">//     INFO(action-&gt;text());</span></span><br><span class="line">    <span class="comment">//     auto menu = action-&gt;menu();</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//     menu-&gt;setIcon(QIcon(R&quot;(C:\Project_repository\save\image\cat_640_640.jpg)&quot;));</span></span><br><span class="line">    <span class="comment">// &#125;);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QPushButton&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">GButton</span> : <span class="keyword">public</span> QPushButton &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">GButton</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">event</span><span class="params">(QEvent *e)</span> <span class="keyword">override</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">mousePressEvent</span><span class="params">(QMouseEvent *e)</span> <span class="keyword">override</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;gbutton.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;logger.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QMouseEvent&gt;</span></span></span><br><span class="line"></span><br><span class="line">GButton::<span class="built_in">GButton</span>() &#123;</span><br><span class="line">    <span class="built_in">setFixedSize</span>(&#123;<span class="number">300</span>, <span class="number">100</span>&#125;);</span><br><span class="line">    <span class="built_in">setText</span>(<span class="string">&quot;button clicked&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">GButton::event</span><span class="params">(QEvent *e)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// INFO(__FUNCTION__);</span></span><br><span class="line">    <span class="keyword">return</span> QPushButton::<span class="built_in">event</span>(e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">GButton::mousePressEvent</span><span class="params">(QMouseEvent *e)</span> </span>&#123;</span><br><span class="line">    e-&gt;<span class="built_in">ignore</span>();</span><br><span class="line">    <span class="built_in">INFO</span>(<span class="string">&quot;[button]clicked&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://crossroadw.github.io/awesome.github.io/2024/08/03/modernc++coroutine/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/awesome.github.io/images/avatar.gif">
-      <meta itemprop="name" content="awesome wang">
-      <meta itemprop="description" content="qt c++  devloper">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小王博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/awesome.github.io/2024/08/03/modernc++coroutine/" class="post-title-link" itemprop="url">现代c++协程第一篇</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-08-03 16:49:44 / 修改时间：18:23:13" itemprop="dateCreated datePublished" datetime="2024-08-03T16:49:44+08:00">2024-08-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="协程-Coroutine-既是函数也是协程"><a href="#协程-Coroutine-既是函数也是协程" class="headerlink" title="协程(Coroutine)既是函数也是协程"></a><code>协程(Coroutine)既是函数也是协程</code></h1><blockquote>
-<p>协程：允许暂停的函数（函数的泛化）</p>
-</blockquote>
-<h2 id="普通函数的工作原理"><a href="#普通函数的工作原理" class="headerlink" title="普通函数的工作原理"></a>普通函数的工作原理</h2><p>普通函数包含两个操作 : <code>call &amp;&amp; return</code></p>
-<ul>
-<li><code>call</code>: 暂停函数执行，创建 <code>activation frame</code> 转到被调用函数的执行</li>
-<li><code>return</code>: 将返回值保存，传给调用者，销毁 <code>activation frame</code>,在调用处恢复调用者的执行</li>
-</ul>
-<h3 id="Activation-Frames"><a href="#Activation-Frames" class="headerlink" title="Activation Frames"></a>Activation Frames</h3><blockquote>
-<p>the block of memory that holds the current state of a particular invocation of a function</p>
-<p>保存了函数调用状态的内存，包括参数的值和局部变量的值</p>
-</blockquote>
-<p>对于普通函数， <code>activation frame</code> 保存返回地址(通常由 call 指令保存)，</p>
-<p>以及调用者的 <code>activation frame</code> 的地址，以便恢复该函数的执行状态</p>
-<p>普通函数的 <code>activation frame</code> 具有严格的 <code>lifetimes</code> 嵌套，这允许高效的数据结构来分配和释放，比如 <code>stack</code></p>
-<p>所以 <code>activation frame</code> 也通常称为 <code>stack frame</code></p>
-<h2 id="Coroutines"><a href="#Coroutines" class="headerlink" title="Coroutines"></a>Coroutines</h2><blockquote>
-<p>协程通过将 Call 和 Return 操作中执行的一些步骤分离为三个额外操作来概括函数的操作：</p>
-<p><code>Suspend</code>、<code>Resume</code> 和 <code>Destroy</code>。</p>
-</blockquote>
-<ul>
-<li><p>Suspend 暂停当前协程执行，并将执行转移回调用方或恢复方，协程执行暂停后，暂停时作用域内的任何对象仍保持存活状态。</p>
-</li>
-<li><p>Resume 在挂起的协程的挂起点处恢复执行。</p>
-</li>
-<li><p>Destroy 销毁 <code>Coroutine activation frame</code> 不再恢复执行。挂起点范围内的任何对象都将被销毁。</p>
-</li>
-</ul>
-<h3 id="Coroutine-activation-frames"><a href="#Coroutine-activation-frames" class="headerlink" title="Coroutine activation frames"></a>Coroutine activation frames</h3><ul>
-<li><p>由于协程可以在不销毁激活帧的情况下挂起，因此我们不能再保证激活帧的生存期将严格嵌套。激活帧可能需要存储在堆上。</p>
-</li>
-<li><p>C++ 协程规定，如果编译器可以证明协程的生命周期确实严格嵌套在调用方的生命周期内，则允许从调用方的激活帧分配协程帧的内存。</p>
-</li>
-<li><p>对于协程，激活帧的某些部分需要在协程挂起期间保留，而有些部分只需要在协程执行时保留。例如一个 <strong>scope</strong> 不跨越挂起点的变量</p>
-</li>
-<li><p><code>Coroutine</code> 逻辑上分为：(coroutine frame)协程帧和(stack frame)栈帧</p>
-</li>
-<li><p>“协程帧”保存协程激活帧的部分，该部分在挂起时持续存在，“栈帧”部分仅在协程执行时存在，并在协程挂起并转移回调用者或恢复者时释放</p>
-</li>
-</ul>
-<h3 id="The-Suspend-operation"><a href="#The-Suspend-operation" class="headerlink" title="The Suspend operation"></a>The Suspend operation</h3><ul>
-<li><p>挂起操作使得协程在函数中间暂停执行，并将执行转移回协程的调用者或恢复者。</p>
-</li>
-<li><p>挂起点通过使用 <code>co_await</code> 或 <code>co_yield</code> 关键字来标识。</p>
-</li>
-<li><p>到达挂起点时，要准备恢复的数据，准备工作：寄存器中保存的值写入协程帧，写入暂存点。准备好了，即可视为<code>suspended</code></p>
-</li>
-<li><p>协程可以在执行转移回调用者&#x2F;恢复者之前执行一些附加逻辑。该附加逻辑可以访问协程帧的句柄，该句柄可用于稍后恢复或销毁</p>
-</li>
-<li><p>挂起后执行逻辑的能力允许恢复协程，或者转移到调用者或恢复者</p>
-</li>
-<li><p>如果执行转移到调用者&#x2F;恢复者，则协程激活帧的栈帧部分将被释放并从栈中弹出。</p>
-</li>
-</ul>
-<h3 id="The-Resume-operation"><a href="#The-Resume-operation" class="headerlink" title="The Resume operation"></a>The Resume operation</h3><ul>
-<li><p>恢复操作可以在处于<code>suspended</code>状态的协程上执行。</p>
-</li>
-<li><p>当函数想要恢复协程时，是通过调用被挂起的协程帧句柄上的 <code>void resume()</code> 方法。</p>
-</li>
-<li><p>像普通的函数调用一样，对 <code>resume()</code> 的调用分配一个新的栈帧，并在将执行转移之前将调用者的返回地址存储在栈帧中。</p>
-</li>
-<li><p>但是，它不会将执行转移到函数的开头，而是将执行转移到函数中上次挂起的位置。</p>
-</li>
-<li><p>当协程下次<strong>挂起</strong>或运行对 <code>resume()</code> 的<strong>调用完成</strong>时，将返回并恢复调用函数的执行。</p>
-</li>
-</ul>
-<h3 id="The-Destroy-operation"><a href="#The-Destroy-operation" class="headerlink" title="The Destroy operation"></a>The Destroy operation</h3><ul>
-<li>Destroy 操作会销毁协程帧，此操作只能在挂起的协程上执行。</li>
-<li>但是，它不是将执行转移到一个代码块，该代码块在挂起点调用作用域内所有局部变量的<strong>析构函数</strong>，然后释放协程帧使用的内存。</li>
-<li>Destroy 操作通过调用相应的 Suspend状态的协程帧句柄上的 <code>void destroy()</code> 方法来销毁的特定激活帧。</li>
-</ul>
-<h3 id="The-Call-operation-of-a-coroutine"><a href="#The-Call-operation-of-a-coroutine" class="headerlink" title="The Call operation of a coroutine"></a>The Call operation of a coroutine</h3><ul>
-<li><p><strong>协程</strong>的调用与<strong>普通函数</strong>的调用相似，从调用者的角度来看没有什么区别</p>
-</li>
-<li><p>然而，当函数运行完成时，执行不会仅返回到调用者，而对于协程，调用操作将在协程到达其第一个挂起点时恢复调用者的执行。</p>
-</li>
-<li><p>协程执行 Call 时，调用者分配一个新的栈帧，保存参数和返回地址到栈帧，并专业将执行转移到协程。</p>
-</li>
-<li><p>协程的第一件事是在堆上分配一个协程帧，并复制&#x2F;移动参数从栈帧到协程帧中</p>
-</li>
-</ul>
-<h3 id="The-Return-operation-of-a-coroutine"><a href="#The-Return-operation-of-a-coroutine" class="headerlink" title="The Return operation of a coroutine"></a>The Return operation of a coroutine</h3><ul>
-<li>协程的 Return 与普通函数的 Return 有所不同。</li>
-<li>当协程执行 <code>co_return</code> 时，它保存返回值（具体由由协程定义），然后销毁范围内的局部变量（除了参数）</li>
-<li>在将执行转移回<strong>调用者&#x2F;恢复者</strong>之前执行一些附加逻辑。</li>
-<li>此附加逻辑可能会执行某些操作来发布返回值，或者可能会恢复另一个正在等待结果的协程。</li>
-<li>然后，协程执行<strong>Suspend&#x2F;Destroy</strong>。</li>
-<li>然后根据**Suspend&#x2F;Destroy ** 的语义将执行转移回调用者&#x2F;恢复者，将激活帧的堆栈帧组件从堆栈中弹出。</li>
-<li>注意：传递给 <code>co_return</code>的返回值与从 Call 的返回值不同，因为返回操作可能会从初始 Call 恢复之后很长时间才执行。</li>
-</ul>
-<h3 id="Coroutine-summery"><a href="#Coroutine-summery" class="headerlink" title="Coroutine summery"></a>Coroutine summery</h3><blockquote>
-<p>将协程描述为函数的概括，除了“正常”函数提供的‘<strong>Call</strong>’ and ‘<strong>Return</strong>’之外，该函数还具有三个附加操作——‘<strong>Suspend</strong>’, ‘<strong>Resume</strong>’和‘<strong>Destroy</strong>’</p>
-</blockquote>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/awesome.github.io/2024/08/03/modernc++coroutine/" rel="prev" title="现代c++协程第一篇">
+      <i class="fa fa-chevron-left"></i> 现代c++协程第一篇
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://crossroadw.github.io/awesome.github.io/2024/08/03/hexo%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/awesome.github.io/images/avatar.gif">
-      <meta itemprop="name" content="awesome wang">
-      <meta itemprop="description" content="qt c++  devloper">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小王博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/awesome.github.io/2024/08/03/hexo%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">hexo常用命令(懒得记)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-08-03 16:21:51 / 修改时间：18:28:39" itemprop="dateCreated datePublished" datetime="2024-08-03T16:21:51+08:00">2024-08-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="创建文字"><a href="#创建文字" class="headerlink" title="创建文字"></a>创建文字</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;文章名字&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server </span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="生成文件-没屁用"><a href="#生成文件-没屁用" class="headerlink" title="生成文件(没屁用)"></a>生成文件(没屁用)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="部署到github-最有用"><a href="#部署到github-最有用" class="headerlink" title="部署到github(最有用)"></a>部署到github(最有用)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -499,6 +290,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6"><span class="nav-number">1.</span> <span class="nav-text">事件机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QWidget-installEventFilter"><span class="nav-number">2.</span> <span class="nav-text">QWidget::installEventFilter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E4%BC%A0%E6%92%AD"><span class="nav-number">3.</span> <span class="nav-text">事件传播</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
